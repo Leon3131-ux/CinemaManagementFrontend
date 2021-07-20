@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-header',
@@ -8,11 +7,9 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private translateService: TranslateService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    console.log(this.translateService.instant('navigation.movies'))
-    console.log(this.translateService.currentLang)
   }
 
 }
