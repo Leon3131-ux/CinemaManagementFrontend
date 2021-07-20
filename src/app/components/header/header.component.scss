@@ -1,0 +1,39 @@
+.language-picker{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  li{
+    display: inline-block;
+    .language-separator{
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+  }
+}
+.placeholder-logo{
+  display: inline-block;
+  margin-right: 1em;
+  margin-bottom: 0;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+.sidenav-toggle{
+  width: auto;
+  margin-right: 1em;
+}
+.navigation-link{
+  display: inline-block;
+  margin-right: 1em;
+  h2{
+    margin: 0;
+  }
+}
+mat-toolbar-row{
+  display: flex;
+  height: auto;
+  align-items: center;
+  vertical-align: center;
+  margin-right: 1em;
+  margin-left: 1em;
+}
