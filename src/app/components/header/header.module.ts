@@ -6,6 +6,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {TranslateModule} from "@ngx-translate/core";
+import {LayoutModule} from "@angular/cdk/layout";
 
 
 
@@ -22,7 +23,8 @@ import {TranslateModule} from "@ngx-translate/core";
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    TranslateModule
+    TranslateModule,
+    LayoutModule
   ]
 })
 export class HeaderModule { }

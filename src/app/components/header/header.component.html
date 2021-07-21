@@ -1,22 +1,22 @@
 <mat-toolbar class="mat-primary">
-  <button mat-icon-button class="sidenav-toggle" (click)="toggleSidenav()">
+  <button mat-icon-button class="sidenav-toggle" (click)="toggleSidenav()" *ngIf="isMobile">
     <mat-icon>menu</mat-icon>
   </button>
   <p class="placeholder-logo">
     Logo will be here
   </p>
 
-  <a class="navigation-link">
+  <a class="navigation-link" *ngIf="!isMobile">
     <h2>{{'navigation.programme' | translate}}</h2>
   </a>
 
-  <a class="navigation-link">
+  <a class="navigation-link" *ngIf="!isMobile">
     <h2>{{'navigation.movies' | translate}}</h2>
   </a>
 
   <span class="spacer"></span>
 
-  <ul class="language-picker">
+  <ul class="language-picker" *ngIf="!isMobile">
     <li>
       <a>EN</a>
     </li>
