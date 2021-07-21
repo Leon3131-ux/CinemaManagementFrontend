@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
+import {SidenavService} from "./services/sidenav.service";
+import {MatSidenav} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-root',
@@ -8,10 +10,20 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class AppComponent implements OnInit{
 
-  constructor(private translateService: TranslateService) {}
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+
+  constructor(
+    private translateService: TranslateService,
+    private sidenavService: SidenavService
+  ) {}
 
   ngOnInit(){
     this.translateService.use('de');
+    this.sidenavService.sidenavToggled.subscribe(() => {
+      this.sidenav.toggle();
+    })
   }
+
+
 
 }

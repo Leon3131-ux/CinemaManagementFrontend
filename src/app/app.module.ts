@@ -7,6 +7,7 @@ import {HeaderModule} from "./components/header/header.module";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -29,7 +30,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
