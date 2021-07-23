@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -16,7 +16,9 @@ import {HomeModule} from "./components/home/home.module";
 import {HomeComponent} from "./components/home/home.component";
 import {DefaultErrorHandler} from "./errorHandlers/default-error-handler";
 import {InternalServerErrorHandler} from "./errorHandlers/internal-server-error-handler";
-
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+registerLocaleData(localeDe);
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -54,7 +56,8 @@ const routes: Routes = [
   ],
   providers: [
     DefaultErrorHandler,
-    InternalServerErrorHandler
+    InternalServerErrorHandler,
+    { provide: LOCALE_ID, useValue: 'de-DE'},
   ],
   bootstrap: [AppComponent]
 })

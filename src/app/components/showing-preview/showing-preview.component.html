@@ -4,7 +4,7 @@
       {{showing.movie.name}}
     </mat-card-title>
     <mat-card-subtitle>
-      {{showing.dateTime}}
+      {{showing.dateTime | date:'short':'CEST': 'de-DE'}}
     </mat-card-subtitle>
   </mat-card>
 </div>
