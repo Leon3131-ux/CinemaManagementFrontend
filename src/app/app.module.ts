@@ -11,18 +11,29 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {SidenavNavigationModule} from "./components/sidenav-navigation/sidenav-navigation.module";
 import {CustomSnackbarModule} from "./components/custom-snackbar/custom-snackbar.module";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {RouterModule, Routes} from "@angular/router";
+import {HomeModule} from "./components/home/home.module";
+import {HomeComponent} from "./components/home/home.component";
+import {DefaultErrorHandler} from "./errorHandlers/default-error-handler";
+import {InternalServerErrorHandler} from "./errorHandlers/internal-server-error-handler";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
+const routes: Routes = [
+  {path: 'home', component: HomeComponent},
+  {path: '**', redirectTo: 'home'}
+]
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     HeaderModule,
     HttpClientModule,
@@ -37,9 +48,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSidenavModule,
     SidenavNavigationModule,
     CustomSnackbarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    RouterModule,
+    HomeModule,
   ],
-  providers: [],
+  providers: [
+    DefaultErrorHandler,
+    InternalServerErrorHandler
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

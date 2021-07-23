@@ -6,12 +6,15 @@ import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
-  declarations: [
-    ShowingPreviewComponent
-  ],
-  imports: [
-    CommonModule,
-    MatCardModule
-  ]
+    declarations: [
+        ShowingPreviewComponent
+    ],
+    exports: [
+        ShowingPreviewComponent
+    ],
+    imports: [
+        CommonModule,
+        MatCardModule
+    ]
 })
 export class ShowingPreviewModule { }

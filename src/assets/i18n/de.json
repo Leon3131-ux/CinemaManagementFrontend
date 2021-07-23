@@ -2,5 +2,11 @@
   "navigation": {
     "programme": "Kinoprogramm",
     "movies": "Filme"
+  },
+  "error": {
+    "400": {
+      "title": "Fehler 400",
+      "message": "Es ist ein Fehler aufgetreten"
+    }
   }
 }
