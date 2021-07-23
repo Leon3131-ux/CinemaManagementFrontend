@@ -3,6 +3,9 @@
     "programme": "Kinoprogramm",
     "movies": "Filme"
   },
+  "showing": {
+    "reserve": "Reservieren"
+  },
   "error": {
     "400": {
       "title": "Fehler 400",

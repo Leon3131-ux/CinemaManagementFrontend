@@ -1,10 +1,14 @@
 <div class="container">
-  <mat-card *ngFor="let showing of showings">
+  <mat-card class="card" *ngFor="let showing of showings">
     <mat-card-title>
       {{showing.movie.name}}
     </mat-card-title>
     <mat-card-subtitle>
       {{showing.dateTime | date:'short':'CEST': 'de-DE'}}
     </mat-card-subtitle>
+    <img class="image" mat-card-image src="{{environment.api_url + '/movie/image/' + showing.movie.id}}">
+    <mat-card-actions>
+      <button mat-raised-button color="accent">{{'showing.reserve' | translate}}</button>
+    </mat-card-actions>
   </mat-card>
 </div>
