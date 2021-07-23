@@ -9,6 +9,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {SidenavNavigationModule} from "./components/sidenav-navigation/sidenav-navigation.module";
+import {CustomSnackbarModule} from "./components/custom-snackbar/custom-snackbar.module";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -33,7 +35,9 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     MatSidenavModule,
-    SidenavNavigationModule
+    SidenavNavigationModule,
+    CustomSnackbarModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

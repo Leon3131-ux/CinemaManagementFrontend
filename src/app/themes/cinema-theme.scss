@@ -1,0 +1,20 @@
+@use '~@angular/material' as mat;
+@import 'src/app/components/custom-snackbar/custom-snackbar.component.theme';
+
+@include mat.core();
+
+$cinema-primary: mat.define-palette(mat.$light-green-palette, A700);
+$cinema-accent: mat.define-palette(mat.$teal-palette);
+$cinema-warn: mat.define-palette(mat.$red-palette);
+
+$cinema-theme: mat.define-dark-theme((
+  color: (
+    primary: $cinema-primary,
+    accent: $cinema-accent,
+    warn: $cinema-warn,
+  )
+));
+
+@include mat.core($cinema-theme);
+@include mat.all-component-themes($cinema-theme);
+@include custom-snackbar-theme($cinema-theme);

@@ -1,0 +1,14 @@
+@use '~@angular/material' as mat;
+@use 'sass:map';
+
+@mixin custom-snackbar-theme($theme){
+
+  $color-config: mat.get-color-config($theme);
+
+  $warn-palette: map.get($color-config, 'warn');
+
+  snack-bar-container.error{
+    background-color: mat.get-color-from-palette($warn-palette, A700);
+    color: mat.get-contrast-color-from-palette($warn-palette, A700);
+  }
+}
