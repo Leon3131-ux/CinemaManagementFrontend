@@ -18,6 +18,8 @@ import {DefaultErrorHandler} from "./errorHandlers/default-error-handler";
 import {InternalServerErrorHandler} from "./errorHandlers/internal-server-error-handler";
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
+import {MovieViewModule} from "./components/movie-view/movie-view.module";
+import {MovieTableModule} from "./components/movie-table/movie-table.module";
 registerLocaleData(localeDe);
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -31,7 +33,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,8 @@ const routes: Routes = [
     MatSnackBarModule,
     RouterModule,
     HomeModule,
+    MovieViewModule,
+    MovieTableModule
   ],
   providers: [
     DefaultErrorHandler,

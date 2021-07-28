@@ -1,0 +1,12 @@
+<div class="container">
+  <mat-card *ngFor="let movie of movies">
+    <mat-card-title>
+      {{movie.name}}
+    </mat-card-title>
+    <img mat-card-image class="image" src="{{environment.api_url + '/movie/image/' + movie.id}}">
+    <mat-card-actions>
+      <button mat-raised-button color="accent">{{'movie.showings' | translate}}</button>
+      <button mat-raised-button color="accent">{{'movie.reserve' | translate}}</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -6,6 +6,10 @@
   "showing": {
     "reserve": "Reservieren"
   },
+  "movie": {
+    "showings": "Vorstellungen",
+    "details": "Details"
+  },
   "error": {
     "400": {
       "title": "Fehler 400",
